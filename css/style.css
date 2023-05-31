@@ -1,4 +1,5 @@
-.{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;700;800;900&display=swap');
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,6 +7,85 @@
 }
 
 #container {
+    display: flex;
     min-height: 100vh;
     background: rgba(68, 117, 136, 0.548);
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card{
+    background: #fff;
+    width: 300px;
+    border-radius: 10px;  /*curved border of 10px*/
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+                 rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    transition: 0.5s;
+}
+
+/*.card:hover{
+    transform: translateY(-20px);
+}*/
+
+.card:hover .coeur{
+    left: 0;
+}
+
+.card:hover .card-header img{
+    transform: scale(1.1);
+    filter: grayscale(0);
+}
+
+.card-header {
+    position : relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-header img{
+    width: 100%;
+    height: 100%;
+    /*border-radius: 10px 10px 0 0; 10px curve on two top corners of pictures
+    but overflow: hidden does it too*/
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: 0.5s;
+}
+
+
+.card-text {
+    padding : 30px;
+}
+
+.card-text h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card-text p {
+    font-size: 14px;
+    color: rgb(147,147,147);
+    font-weight: 400;
+}
+
+.coeur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    background: rgb(237,53,96);
+    left: -50px; /*element outside and hidden*/
+    transition: 0.5s;
+}
+
+.coeur a{
+    color: #fff;
 }
